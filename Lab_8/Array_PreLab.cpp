@@ -36,7 +36,7 @@ int main()
 	int	mult = 1; 
 	int sum = 0;
 
-	cout << "Enter Size of List: ";
+	cout << endl << "Enter Size of List: ";
 	cin >> size;
 
 	// Function Calls
@@ -73,7 +73,7 @@ int main()
 
 	//Output Array
 
-	cout << endl << "Array: ";
+	cout << endl << "Array: " << endl; 
 
 	output_array(list, size);
 
@@ -96,7 +96,7 @@ int main()
 		}
 	}
 
-	cout << endl << "Sorted Array: ";
+	cout << "Sorted Array: ";
 
 	for (int i = 0; i < size; i++)
 	{
@@ -107,7 +107,7 @@ int main()
 
 	cout << endl << endl << "Enter Key: ";
 	cin >> key;
-	cout << endl;
+	
 
 	//Assume Key is not in the List
 
@@ -129,7 +129,7 @@ int main()
 
 	sum = sum_array(list, size);
 
-	cout << endl << "Sum is: " << sum << endl;
+	cout << endl << endl << "Sum is: " << sum << endl;
 
 	//Calculate and Ouput the Average
 
@@ -139,7 +139,7 @@ int main()
 
 	ave = static_cast<double>(sum) / size;
 
-	cout << endl << "The Average is: " << ave << endl;
+	cout << "The Average is: " << ave << endl << endl;
 
 	// Find and Output the Smallest Element in the Array
 
@@ -155,19 +155,20 @@ int main()
 
 	//Output the Array in Reverse
 
-	rev_array(list, size);
-
 	cout << endl << "Reverse Array: " << endl;
+
+	rev_array(list, size);
 
 	cout << endl;
 
 	//Multiply each Element by a Multiplier
-
-
+	
 	cout << "Enter Multiplier: ";
 	cin >> mult;  
 
 	mult_array(list, size, mult);
+
+	cout << endl << endl; 
 
 	return 0;
 }
@@ -184,7 +185,7 @@ void input_array(int list[], int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		cout << "Enter Element: ";
+		cout << "Element " << i << " : ";
 		cin >> list[i];
 	}
 
@@ -254,11 +255,7 @@ void rev_array(int list[], int size)
 void mult_array(int list[], int size, int mult) 
 {
 
-
-	cout << "Enter Multiplier: ";
-	cin >> mult;
-
-	for (int i = 1; i < size; i++)
+	for (int i = 0; i < size; i++)
 	{
 		list[i] *= mult;
 	}
@@ -271,4 +268,3 @@ void mult_array(int list[], int size, int mult)
 	}
 
 }
-
