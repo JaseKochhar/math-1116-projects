@@ -3,6 +3,25 @@ projects from c++ (year 1)
 
 ## Running Code
 
+### Makefiles
+
+To easily run code:
+
+1. Create a file named `Makefile`
+2. Add the following lines to it:
+
+```Makefile
+run:
+	g++ -o -o {OUTPUT_BINARY_FILE} {INPUT_CPP_FILE}
+	./{OUTPUT_BINARY_FILE}
+	rm -rf ./{OUTPUT_BINARY_FILE}
+```
+
+Where:
+- `{OUTPUT_BINARY_FILE}` is the name of the binary file that we want to create
+  - **MAKE SURE BINARY FILE HAS A `.out` EXTENSION**. This ensures that these files will not get pushed to GitHub (since `.out` is in the `.gitignore`), which is not a good practice.
+- `{INPUT_CPP_FILE}` is the name of the `cpp` file that we have already written
+
 ### Compiling
 
 Since C++ is a compiled language [see here](https://www.youtube.com/watch?v=I1f45REi3k4), before we run the code, we have to compile it into a binary using the `gcc` compiler.
