@@ -15,6 +15,7 @@ $ g++ -o {OUTPUT_BINARY_FILE} {INPUT_CPP_FILE}
 
 Where:
 - `{OUTPUT_BINARY_FILE}` is the name of the binary file that we want to create
+  - **MAKE SURE BINARY FILE HAS A `.out` EXTENSION**. This ensures that these files will not get pushed to GitHub (since `.out` is in the `.gitignore`), which is not a good practice.
 - `{INPUT_CPP_FILE}` is the name of the `cpp` file that we have already written
 
 The `-o` flag tells the command that the next string is going to be the name of the `-o`utput file.
