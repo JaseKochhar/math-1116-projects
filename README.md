@@ -12,7 +12,7 @@ To easily run code:
 
 ```Makefile
 run:
-	g++ -o -o {OUTPUT_BINARY_FILE} {INPUT_CPP_FILE}
+	g++ -o {OUTPUT_BINARY_FILE} {INPUT_CPP_FILE}
 	./{OUTPUT_BINARY_FILE}
 	rm -rf ./{OUTPUT_BINARY_FILE}
 ```
