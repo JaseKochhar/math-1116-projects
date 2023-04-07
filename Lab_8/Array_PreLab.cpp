@@ -8,54 +8,23 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include "Array_PreLab.h"
+
 using namespace std;  
-
-// Function Prototypes
-
-void init_array(int list[] , int size);
-
-void input_array(int list[], int size);
-
-void output_array(int list[], int size);
-
-int sum_array(int list[], int size);
-
-int find_small(int list[], int size);
-
-int find_large(int list[], int size);
-
-void rev_array(int list[], int size);
-
-void mult_array(int list[], int size, int mult); 
 
 int main()
 {
-	const int arraySize = 100;
-	int list[arraySize];
-	int size, key, hold, small, large; 
-	int	mult = 1; 
-	int sum = 0;
-
+	int size;
 	cout << endl << "Enter Size of List: ";
 	cin >> size;
-
-	// Function Calls
-
-	// init_array(list, size);
-
-	// input_array(list, size);
-
-	// output_array(list, size);
-
-	// sum_array(list, size);
-
-	// find_small(list, size);
-
-	// find_large(list, size);
-
-	// rev_array(list, size);
-
-	// mult_array(list, size, mult);
+    if (!check_size(size)) {
+        cout << "invalid array size of " << size << " given" << endl;
+        return -1;
+    }
+	int list[size];
+	int key, hold, small, large; 
+	int	mult = 1; 
+	int sum = 0;
 
 	//Initialize Each Value in the Array
 
@@ -171,100 +140,4 @@ int main()
 	cout << endl << endl; 
 
 	return 0;
-}
-
-	// Function Definitions
-
-void init_array(int list[], int size)
-{ 
-	for (int i = 0; i < size; i++)
-		list[i] = 0;  
-}
-
-void input_array(int list[], int size) 
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << "Element " << i << " : ";
-		cin >> list[i];
-	}
-
-} 
-
-void output_array(int list[], int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << list[i] << endl;
-	}
-	cout << endl;
-}
-
-int sum_array(int list[], int size)
-{
-	int sum = 0; 
-
-	for (int i = 0; i < size; i++)
-	{
-		sum += list[i];
-	}
-
-	return sum;
-}
-
-int find_small(int list[], int size)
-{
-	//Assume the Smallest is the First Element in the Array
-
-	int small;
-
-	small = list[0];
-
-	for (int i = 1; i < size; i++)
-	{
-		if (list[i] < small)
-			small = list[i];
-	}
-	return small; 
-}
-
-int find_large(int list[], int size)
-{
-	//Assume the largest is the Last Element in the Array
-
-	int large;
-
-	large = list[0];
-
-	for (int i = 1; i < size; i++)
-	{
-		if (list[i] > large)
-			large = list[i];
-	}
-	return large; 
-}
-
-void rev_array(int list[], int size)
-{
-	for (int i = size - 1; i >= 0; i--)
-	{
-		cout << list[i] << endl;
-	}
-}
-
-void mult_array(int list[], int size, int mult) 
-{
-
-	for (int i = 0; i < size; i++)
-	{
-		list[i] *= mult;
-	}
-
-	cout << endl << "Array: ";
-
-	for (int i = 0; i < size; i++)
-	{
-		cout << endl << list[i]; 
-	}
-
 }
